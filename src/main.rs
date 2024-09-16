@@ -194,6 +194,11 @@ fn main() {
         Some(index) => println!("The letter 'a' is found at index: {}", index),
         None => println!("The letter 'a' is not found in the string."),
     }
+
+    let arr: [i32; 4] = [3, 8, 5, 10];
+    let result = fisrt_element(&arr).unwrap();
+    println!("Array = {:?}", arr);
+    println!("first array element = {}", result);
 }
 
 
@@ -259,5 +264,13 @@ fn find_first_a(s: String) -> Option<i32> {
     }
     return None;
     // Err("The character 'a' is not present here..".to_string())
+}
+
+fn fisrt_element(array: &[i32]) -> Option<i32> {
+    if array.len() > 0 {
+        Some(array[0])
+    } else {
+        None
+    }
 }
 
